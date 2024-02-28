@@ -12,3 +12,6 @@ This is a simple React application that allows users to change the background co
 
 - React
 - Tailwind CSS
+## Preview
+
+![Color Changing App](./ScreenshotBG.png)
