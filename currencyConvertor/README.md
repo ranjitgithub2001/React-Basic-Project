@@ -45,4 +45,4 @@ const MyComponent = () => {
 
 ### Preview
 
-![Currency Converter App](./ScreenshotCurr.png)
+![Currency Converter App](./ScreenshotCurr.png) 
