@@ -15,4 +15,4 @@ This is a simple React-based Password Generator that allows you to generate rand
 
 ## Preview
 
-![Password Generator](.ScreenshotPSW.png)
+![Password Generator](./ScreenshotPSW.png)
