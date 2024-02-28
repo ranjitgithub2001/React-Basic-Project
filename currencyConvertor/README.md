@@ -42,7 +42,7 @@ const MyComponent = () => {
   // ... rest of your component logic
 };
 
-
+```
 ### Preview
 
 ![Currency Converter App](./ScreenshotCurr.png) 
