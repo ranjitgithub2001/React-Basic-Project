@@ -1,4 +1,4 @@
-# Color Changing App
+# ✨Color Changing App
 
 This is a simple React application that allows users to change the background color dynamically by clicking on color buttons.
 
