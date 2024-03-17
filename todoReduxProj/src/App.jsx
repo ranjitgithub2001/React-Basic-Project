@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { AddTodo } from '/src/component/AddTodo.jsx'
+import {Todos} from './component/Todos'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      
+      <AddTodo/>
+      <Todos/>
     </>
   )
 }

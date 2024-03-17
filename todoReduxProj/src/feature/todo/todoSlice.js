@@ -20,13 +20,14 @@ export const todoSlice=createSlice({
             state.todos=state.todos.filter((todo)=> todo.id
             !== action.payload)
         },
-        updateTodo:(state, action)=>{
-            const index= state.todos.findIndex(todo => todo.id === action.payload.id)
+        updateTodo: (state, action) => {
+            const { id, updatedTodoData } = action.payload;
+            const index = state.todos.findIndex(todo => todo.id === id);
             
-            if (index !== -1 ){
-                state.todos[index] =action.payload.updateTodo
+            if (index !== -1) {
+              state.todos[index].text = updatedTodoData.text;
             }
-        }
+          }
     }
 })
 

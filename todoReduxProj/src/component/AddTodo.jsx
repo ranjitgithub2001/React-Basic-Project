@@ -2,7 +2,7 @@ import React from 'react'
 import {useDispatch} from 'react-redux'
 import {addTodo} from '../feature/todo/todoSlice'
 
-function AddTodo() {
+ export function AddTodo() {
     const [input, setInput]=React.useState('')
     const dispatch=useDispatch()
     const addTodoHandler=(e)=>{
@@ -29,5 +29,3 @@ function AddTodo() {
     </form>
   )
 }
-
-export default AddTodo
