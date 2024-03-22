@@ -33,3 +33,7 @@ Navigate to the todoReduxProj folder:
 ├── public/                 # Public assets and index.html
 ├── package.json            # Project dependencies and scripts
 └── README.md               # Project documentation
+
+
+![Todo Snippet](https://github.com/ranjitgithub2001/React-Basic-Project/raw/main/todoReduxProj/todoSnip.png)
+*Todo Snippet: Example of Todo Application*
