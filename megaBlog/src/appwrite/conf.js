@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config/config'
 
 import {Client, Databases, ID, Storage, Query} from 'appwrite'
 
@@ -31,6 +31,25 @@ export class Service{
         }
     }
 
+    async updatePost(slug,{title,  content, featuredImage, status}){
+        try {
+            return await this.database.updateDocument(
+                config.appwriteDatabaseId,
+                config.appwriteCollectionID,
+                slug,
+                {
+                    title,
+                    content,
+                    featuredImage,
+                    status
+                }
+            )
+        } catch (error) {
+            console.log('Appwrite Service :: Update Post :: Error', error);
+            return false; 
+        }
+
+    }
     async deletePost(slug){
          try {
             await this.database.deleteDocument(
