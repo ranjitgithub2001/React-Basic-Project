@@ -1,60 +1,69 @@
-import config from '../config/config'
+import conf from '../config/config';
+import { Client, Account, ID } from "appwrite";
 
-import {Client, Account, ID} from 'appwrite'
 
-export class AuthService{
-    client=new Client();
+export class AuthService {
+    client = new Client();
     account;
 
-    constructor(){
-        this.client
-        .setEndpoint(config.appwriteUrl)
-        .setProject(config.appwriteProjectId);
-        this.account=new Account(this.client);
+    constructor() {
+        this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId);
+        this.account = new Account(this.client);
+            
     }
 
-    async createAcc({email, password, name}){
+    async createAccount({email, password, name}) {
         try {
-            const userAcc=await this.account.create(ID.unique(), email, password, name);
-            if (userAcc) {
-                return this.login({email, password})
+            const userAccount = await this.account.create(ID.unique(), email, password, name);
+            if (userAccount) {
+                // call another method
+                return this.login({email, password});
             } else {
-                return userAcc
+               return  userAccount;
             }
         } catch (error) {
-            console.log('Appwrite Service :: User Account :: Error', error);
+            throw error;
         }
     }
 
-    async login({email, password}){
+    async login({email, password}) {
         try {
-            return await this.account.createEmailSession(email,password);
-
+            return await this.account.createSession(email, password);
         } catch (error) {
-            console.log('Appwrite Service :: Login :: Error', error);
+            throw error;
         }
     }
 
-    async getCurrentUser(){
+    async getCurrentUser() {
         try {
-            await this.account.get();
+            const currentUser= await this.account.get();
+            return currentUser
         } catch (error) {
-            console.log('Appwrite Service :: Get Current User :: Error', error);
-        }
-        return null;
+            if (error.code === 401 && error.message.includes('missing scope (account)')) {
+                // Handle the scenario where the user's role is missing the account scope
+                console.log("User does not have the required scope (account)");
+                // You may choose to return a custom error message or handle this case differently
+            } else {
+                // Log other errors to the console for debugging purposes
+                console.log("Error fetching current user:", error);
+            }
+            
+            // Return null or throw the error, depending on your application's requirements
+            return null;
     }
+}
 
-    async logOut(){
+    async logout() {
+
         try {
-            await this.account.deleteSessions()
+            await this.account.deleteSessions();
         } catch (error) {
-            console.log('Appwrite Service :: Log Out :: Error', error);
+            console.log("Appwrite serive :: logout :: error", error);
         }
     }
 }
 
-const authService=new AuthService()
+const authService = new AuthService();
 
-export default authService;
-
+export default authService
 

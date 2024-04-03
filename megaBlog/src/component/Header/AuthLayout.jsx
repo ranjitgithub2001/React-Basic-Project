@@ -23,13 +23,17 @@ authentication=true}) {
     //let authValue=authStatus === true ? true : false
     //instead of using (authStatus !== authentication)  you can use (authValue)
 
-    if(authentication && authStatus !== authentication){
-      navigate('/login')
-    }else if(!authentication && authStatus !== authentication){
-      navigate('/')
+    const handleNavigation=()=>{
+      if(authentication && authStatus !== authentication){
+        navigate('/login')
+      }else if(!authentication && authStatus !== authentication){
+        navigate('/')
+      }
+      setloader(false)
     }
-    setloader(false)
+    handleNavigation();    
   },[authStatus, navigate, authentication])
+
   return loader ? <h1>Loading....</h1> : <>{children}</>
 }
 
