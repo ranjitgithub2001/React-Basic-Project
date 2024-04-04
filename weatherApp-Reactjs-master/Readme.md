@@ -1,6 +1,7 @@
 # 🌤️ Weather App - React.js
 
-
+![Weather App Screenshot](![Project Screenshot](https://github.com/ranjitgithub2001/React-Basic-Project/raw/main/weatherApp-Reactjs-master/weatherApp-Reactjs-master/projSnip.jpeg)
+)
 
 ## Overview
 
