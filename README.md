@@ -38,4 +38,10 @@ Manage your tasks efficiently with this Todo Project built with React! 📝 This
 
 Take your task management to the next level with the Todo Redux Project! 📋 This project is built with React and Redux, offering a powerful state management solution for your todo list. Enjoy features such as adding, editing, and removing tasks, all while maintaining a centralized state with Redux.
 
+## 7. Weather App
+
+[![Weather App](https://img.shields.io/badge/🌦️%20Explore-Weather%20App-orange)](https://github.com/ranjitgithub2001/React-Basic-Project/tree/main/weatherApp-Reactjs-master)
+
+Check the Weather App project, a React application that provides real-time weather information. Users can input their location to access current weather conditions, including temperature, humidity, and wind speed. Stay informed about the weather forecast with this intuitive and user-friendly app. 🌦️
+
 Feel free to explore each project's folder for detailed information and start building your React skills! If you have any questions or suggestions, don't hesitate to reach out. Happy coding! 🚀
